@@ -21,6 +21,7 @@ type Author struct {
 }
 
 func getQuoteEndpoint(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	for _, item := range quotes {
 		if item.ID == params["id"] {
@@ -32,6 +33,7 @@ func getQuoteEndpoint(w http.ResponseWriter, r *http.Request) {
 }
 
 func getQuotesEndpoint(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(quotes)
 }
 
