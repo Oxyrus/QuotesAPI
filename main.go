@@ -47,5 +47,5 @@ func main() {
 	router.HandleFunc("/quotes", getQuotesEndpoint).Methods("GET")
 	router.HandleFunc("/quotes/{id}", getQuoteEndpoint).Methods("GET")
 
-  log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
